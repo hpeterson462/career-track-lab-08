@@ -26,4 +26,12 @@ describe('createResponse', () => {
     expect(response.text)
       .toEqual('<html><body><h1>red</h1></body></html>');
   });
+
+  it('returns html with h1 and the word green', async () => {
+    const response = await request(app)
+      .get('/green')
+
+    expect(response.text)
+      .toEqual('<html><body><h1>green</h1></body></html>');
+  });
 });
